@@ -1,3 +1,5 @@
+//as this was a practice project and my first scraper I have not implemented a user interface , In case anyone wants to Contribute I would really appriciate it
+
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
@@ -5,7 +7,7 @@ const cheerio = require('cheerio');
 async function scrapedList(page) {
 
     
-    await page.goto('https://bangalore.craigslist.org/d/software-qa-dba-etc/search/sof');
+    await page.goto('https://bangalore.craigslist.org/d/software-qa-dba-etc/search/sof');//insert/replace this link with your city's craigslist page link 
     
     
     const html = await page.content();
