@@ -7,9 +7,11 @@ Scrapes all the Job listings for a given Location/link and stores them in a JSON
 
 - DOWNLOAD the .zip file or clone the rep.
 - cd to the folder where the where the sttarting files exist .
--run the following command
+- Run the following command
+
               $ npm install
--After the installation is complete run the following command .
+- After the installation is complete run the following command .
+
               $ node index.js
 
 
