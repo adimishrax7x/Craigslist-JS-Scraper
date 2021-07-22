@@ -2,6 +2,10 @@
 
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
+const fs = require('fs');
+
+var data=fs.readFileSync('scrapedData.json');
+
 
 
 async function scrapedList(page) {
@@ -28,6 +32,7 @@ async function scrapedList(page) {
 
     return {title,url,date,place};
 
+    
     }).get(); 
 
     return(listings);
@@ -45,12 +50,20 @@ async function scrapeJobDescriptions(listings,page){
         const html = await page.content();
         const $=await cheerio.load(html);
         await sleep(1000);
-        console.log(listings[i].url);
+        //console.log(listings[i].url);
         const desc = $("#postingbody").text();
         
         listings[i].desc=desc;
-        console.log( listings[i].desc);
+        //console.log( listings[i].desc);
 
+            var data=JSON.stringify(listings[i]);
+         
+            fs.appendFile('scrapedData.json',(data+",\n\n\n"),function(err){
+                if(err){
+                    console.log(err);
+                }
+            });
+        console.log( listings[i]);
     }
 
 }
