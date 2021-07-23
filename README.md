@@ -1,5 +1,5 @@
 # Craigslist-JS-Scraper
-Simple Craigslist Scraper using puppeteer and cheerio
+Simple Craigslist Scraper using puppeteer and cheerio(cheerio enables us to use jQuery on the server side)
 
 Scrapes all the Job listings for a given Location/link and stores them in a JSON file.
 
