@@ -20,8 +20,9 @@ var data=fs.readFileSync('scrapedData.json');
 
 async function scrapedList(page) {
 
+     var url='https://bangalore.craigslist.org/d/software-qa-dba-etc/search/sof';//insert or replace this link with your city's craigslist page link 
     
-    await page.goto('https://bangalore.craigslist.org/d/software-qa-dba-etc/search/sof');//insert or replace this link with your city's craigslist page link 
+    await page.goto(url);
     
     
     const html = await page.content();
